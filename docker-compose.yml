@@ -1,0 +1,13 @@
+version: '2.2'
+services:
+  ui:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.ui
+    command: ng serve --host 0.0.0.0
+    ports:
+      - 0.0.0.0:4200:4200
+      - 0.0.0.0:49152:49152
+    volumes:
+      - ./ui:/project
+      - /project/node_modules

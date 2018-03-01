@@ -1,0 +1,10 @@
+FROM node:latest
+
+WORKDIR /project
+
+ADD ui/package.json /project/package.json
+ADD ui/.angular-cli.json /project/.angular-cli.json
+
+RUN set -ex;                    \
+    npm install -g typings; \
+    npm install;
